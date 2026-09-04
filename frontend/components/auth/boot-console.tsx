@@ -89,8 +89,8 @@ export function BootConsole() {
         aria-label="MYCEL network boot log"
         className="pixel-scroll flex min-h-0 flex-1 flex-col justify-end overflow-y-auto p-4 font-mono text-[10px] leading-relaxed lg:p-5 lg:text-[11px]"
       >
-        {logs.map((log) => (
-          <p key={log.id} className="step-enter flex gap-2 py-1">
+        {logs.map((log, idx) => (
+          <p key={`${log.id}-${idx}`} className="step-enter flex gap-2 py-1">
             <span className="shrink-0 text-secondary">{'>'}</span>
             <span className="shrink-0 text-secondary">[{log.tag}]</span>
             <span className="text-primary-foreground/80">{log.line}</span>

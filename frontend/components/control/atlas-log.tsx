@@ -45,11 +45,11 @@ function AtlasLogBody({
         </p>
       ) : (
         <ol className={cn('flex flex-col', expanded ? 'gap-3' : 'gap-2')}>
-          {logs.map((log) => {
+          {logs.map((log, idx) => {
             const style = LEVEL_STYLES[log.level] || LEVEL_STYLES.info
             return (
               <li
-                key={log.id}
+                key={`${log.id}-${idx}`}
                 className={cn('step-enter flex items-baseline gap-2 font-mono leading-relaxed', textSize, expanded && 'gap-3')}
               >
                 <span className="shrink-0 text-muted-foreground">[{formatElapsed(log.at)}]</span>
